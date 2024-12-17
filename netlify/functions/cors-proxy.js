@@ -1,8 +1,10 @@
 // netlify/functions/cors-proxy.js
 
-import fetch from "node-fetch";
+// const fetch = require("node-fetch");
 
-export async function handler(event, context) {
+exports.handler = async function (event, context) {
+    const { default: fetch } = await import("node-fetch");
+
     // Only allow GET requests
     if (event.httpMethod !== "GET") {
         return {
@@ -22,7 +24,7 @@ export async function handler(event, context) {
 
     try {
         // Validate URL
-        // const urlObj = new URL(url);
+        const urlObj = new URL(url);
 
         // Optional: Add allowed domains check
         // const allowedDomains = ['api.example.com'];
@@ -54,4 +56,4 @@ export async function handler(event, context) {
             body: "Error: " + err.message,
         };
     }
-}
+};
