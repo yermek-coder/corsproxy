@@ -1,8 +1,8 @@
 // netlify/functions/cors-proxy.js
 
-const fetch = require("node-fetch");
+import fetch from "node-fetch";
 
-exports.handler = async function (event, context) {
+export async function handler(event, context) {
     // Only allow GET requests
     if (event.httpMethod !== "GET") {
         return {
@@ -54,4 +54,4 @@ exports.handler = async function (event, context) {
             body: "Error: " + err.message,
         };
     }
-};
+}
