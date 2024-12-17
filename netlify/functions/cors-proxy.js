@@ -22,7 +22,7 @@ export async function handler(event, context) {
 
     try {
         // Validate URL
-        const urlObj = new URL(url);
+        // const urlObj = new URL(url);
 
         // Optional: Add allowed domains check
         // const allowedDomains = ['api.example.com'];
