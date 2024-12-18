@@ -9,6 +9,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "netlify-cli": "^17.38.1",
         "node-fetch": "^3.3.2"
     }
 }
