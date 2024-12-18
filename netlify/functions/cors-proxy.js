@@ -9,6 +9,13 @@ exports.handler = async function (event, context) {
         };
     }
 
+    if (event.headers["proxy-token"] !== "pUSicWPDbwcz141BdtDjG88RAgGqOcrFhwp9PLGJ5RqzuWOV8VxTwPVvavwLYIoZ") {
+        return {
+            statusCode: 403,
+            body: "Invalid token",
+        };
+    }
+
     // Get the URL to proxy from the query parameters
     const url = event.queryStringParameters.url;
     if (!url) {
