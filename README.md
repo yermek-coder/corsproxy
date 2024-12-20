@@ -1,1 +1,1 @@
-Simple netlify cors proxy
+Simple cors proxy running on netlify functions
