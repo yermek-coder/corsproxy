@@ -9,7 +9,6 @@ exports.handler = async function (event, context) {
         };
     }
 
-    // Get the URL to proxy from the query parameters
     const url = event.queryStringParameters.url;
     if (!url) {
         return {
@@ -19,7 +18,6 @@ exports.handler = async function (event, context) {
     }
 
     try {
-        // Make the request to the target URL
         const response = await fetch(url);
 
         // Get the content type and check if it's binary
