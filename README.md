@@ -1,0 +1,1 @@
+Simple netlify cors proxy
